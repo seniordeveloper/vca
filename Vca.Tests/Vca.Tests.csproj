@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
+    <PackageReference Include="Moq" Version="4.18.4" />
+    <PackageReference Include="MSTest.TestAdapter" Version="2.2.8" />
+    <PackageReference Include="MSTest.TestFramework" Version="2.2.8" />
+	<PackageReference Include="coverlet.collector" Version="3.1.2">
+		<PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	</PackageReference>
+	<PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.20" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Vca.Abstractions\Vca.Abstractions.csproj" />
+    <ProjectReference Include="..\Vca.Core\Vca.Core.csproj" />
+    <ProjectReference Include="..\Vca.Data\Vca.Data.csproj" />
+    <ProjectReference Include="..\Vca.Models\Vca.Models.csproj" />
+    <ProjectReference Include="..\Vca.Shared\Vca.Shared.csproj" />
+    <ProjectReference Include="..\Vca\Vca.csproj" />
+  </ItemGroup>
+
+</Project>

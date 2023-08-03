@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.15" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Vca.Abstractions\Vca.Abstractions.csproj" />
+    <ProjectReference Include="..\Vca.Core\Vca.Core.csproj" />
+    <ProjectReference Include="..\Vca.Data\Vca.Data.csproj" />
+    <ProjectReference Include="..\Vca.Models\Vca.Models.csproj" />
+    <ProjectReference Include="..\Vca.Shared\Vca.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ASP\Account\Signin.asp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="ASP\Account\Signup.asp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="ASP\Contacts\Details.asp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="ASP\Contacts\Create.asp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="ASP\Contacts\Default.asp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="ASP\Contacts\Edit.asp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="ASP\jsonObject.class.asp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

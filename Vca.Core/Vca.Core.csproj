@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Vca.Abstractions\Vca.Abstractions.csproj" />
+    <ProjectReference Include="..\Vca.Data\Vca.Data.csproj" />
+    <ProjectReference Include="..\Vca.Models\Vca.Models.csproj" />
+    <ProjectReference Include="..\Vca.Shared\Vca.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
