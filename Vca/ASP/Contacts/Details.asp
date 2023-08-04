@@ -49,7 +49,7 @@ Response.LCID = 1091
                 </ul>
                 <span class="navbar-text">
                   Welcome <span><%= userFirstName%></span>&nbsp;<span><%= userLastName%></span>
-                </span>
+                </span> &nbsp;<a href="/Account/Signout"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
               </div>
             </div>
           </nav>

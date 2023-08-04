@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Vca.Abstractions.Services;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Mvc;
 using Vca.Abstractions.Services.Identity;
 using Vca.Controllers.Base;
 using Vca.Models.Identity;
@@ -34,7 +34,7 @@ namespace Vca.Controllers
                     HttpContext.Response.Cookies.Delete(Cookies.AccountDetails);
                     await SinginAsync(result.Data, signinModel.RememberMe.GetValueOrDefault());
                     HttpContext.Response.Cookies.Append(Cookies.AccountDetails, Newtonsoft.Json.JsonConvert.SerializeObject(result.Data));
-                    return Redirect("/asp/Contacts/Default.asp");
+                    return Redirect("/Contacts/Index");
                 }
                 return Redirect($"{url}?errorDescription={result.Error.Description}");
             });
@@ -55,6 +55,14 @@ namespace Vca.Controllers
 
                 return Redirect($"/asp/Account/Signup.asp?errorDescription={result.Error.Description}");
             });
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Signout() 
+        {
+            await HttpContext.SignOutAsync();
+
+            return RedirectToAction("Signin");
         }
     }
 }
