@@ -2,7 +2,10 @@
 To start work with the project, it's recommended to check whether your system can [meet requirements](https://learn.microsoft.com/en-us/dotnet/core/install/windows?tabs=net70) for [.NET 6](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) and then update `appsettings.json` based on your server configurations (e.g. connection string). 
 
 ## What's the project's purpose?
-The primary purpose of this task is to demonstrate one of ways of migrating from existing `ASP Classic` project to `ASP.NET Core Web App`. Moreover, the application needs to be deployed as a single `ASP.NET Core app`. So, in order to achieve this, all `ASP Classic` pages should be stored in a separate folder(in ASP folder) inside the project and rewrite the business logic using .NET page by page. In other words, ASP Classic pages must eventually become only the presentation layer, and middle tier must be migrated to .NET. It's worth to note that the biggest challenge during such migration is to pass/share data between the 2 tiers as they are totally different worlds(`ASP.NET Core` and `ASP Classic`). For sure, `Session` cannot be shared as they "don't know each other". One possible solution would be using `Cookies` with pre-defined keys for each action methods:
+The primary purpose of this task is to demonstrate one of ways of migrating from existing `ASP Classic` project to `ASP.NET Core Web App`. Moreover, the application needs to be deployed as a single `ASP.NET Core app`.
+
+## How was done?
+So, in order to achieve the target, all `ASP Classic` pages should be stored in a separate folder(in ASP folder) inside the project and rewrite the business logic using .NET page by page. In other words, ASP Classic pages must eventually become only the presentation layer, and middle tier must be migrated to .NET. It's worth to note that the biggest challenge during such migration is to pass/share data between the 2 tiers as they are totally different worlds(`ASP.NET Core` and `ASP Classic`). For sure, `Session` cannot be shared as they "don't know each other". One possible solution would be using `Cookies` with pre-defined keys for each action methods:
 
 - perform necessary operation to fetch data
 - serialize the data as a JSON object
@@ -11,7 +14,7 @@ The primary purpose of this task is to demonstrate one of ways of migrating from
 - `ASP Classic` is able to fetch the data from `Cookies`
 - in order to parse the `JSON` in `VB`, [aspJSON](https://github.com/rcdmk/aspJSON/tree/master) is being used.
 
-This approach is being in almost all pages.
+This approach is being for almost all pages.
 Alternative way would be making `.ajax` calls from `ASP Classic` to `ASP.NET Core`. This approach is also being used in deleting item for demonstration purposes.
 
 ## Walkthrough the application architecture
